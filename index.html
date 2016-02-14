@@ -1,0 +1,163 @@
+<!DOCTYPE html > 
+<html> 
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+  	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  	<style type="text/css">
+  	</style>
+</head>
+<body style="background: #FBE9F2;text-align: center;"> 
+<img class="final"src="image/row-of-hearts.png" style="height:120px;"/>
+<div id="container" class="container" style="margin-top:100px">
+    <h2 id="label"><b>这一刻</b></h2>
+    <h2 id="label2"><strong>是我们一起度过的</strong></h2>
+    <h1 id="clock" style="margin-top:25px; margin-bottom:25px"></h1>
+    <h2 id="label3"><b>虽然 这个情人节不能跟你在一起过</b></h2>
+    <h2 id="label4" style="margin-top:50px"><b>但是</b></h2>
+    <h2 id="addlabel"><b>我还是有好多话想对你说</b></h2>
+    <h2 id="label5" style="margin-top: 150px;"><b>那就是...</b></h2>
+    <h2 id="label6" style="margin-top: 150px;"><b>我怎么可能这么容易让你知道呢 :P</b></h2>
+	<h2 id="label7" style="margin-top: 150px"><b>答对这两道题 我就告诉你吧 :)</b></h2>
+    <div id="form" style="margin-top:150px;">
+    	<h3><b>1. 你是猪吗？</b></h3>
+    	<br>
+    	<button id="formyes" style="margin-right: 10px;width:150px" type="button" class="btn btn-info">Yes</button>
+    	<button id="formno" style="width:150px"type="button" class="btn btn-danger">No</button>
+    	<h3 id="formanswer"></h3>
+    </div>
+    <div id="form2" style="margin-top:150px;">
+    	<h3>2. 答应我 每天都要开开心心 要经常笑 好吗？</h3>
+    	<br>
+    	<button id="answeronly" style="width:100px"type="button" class="btn btn-info btn-large">好 :)</button>
+    </div>
+    <h2 class="final" style="margin-top: 80px"><b>宝宝 情人节快乐~</b></h2>
+    <h4 class="finaltext" style="margin-top: 50px"><b>就这样吗？No....</b></h2>    
+</div>
+<div class="final" style="width: 100%;bottom:0;position: absolute;">
+<img src="image/hearts-line.png" style="height:100px;" />
+</div>
+<script> 
+$("#answeronly").click(function(){
+	$("#form2").hide("fade",2000);
+	setTimeout(function(){
+		$(".final").show("fade",3000);
+	},2000)
+    setTimeout(function (){
+		$(".finaltext").show("fade",3000);    	
+    }, 8000);		
+    setTimeout(function (){
+    	alert("把电脑声音打开吧 :)");
+    	window.location = "./video.html";
+    }, 11000);		    
+});
+$("#formyes").click(function() {
+	$("#formanswer").html("哈哈 答对啦~真棒!");	
+	$("#formanswer").show("fade",3000);
+    setTimeout(function (){
+	    $("#form").hide("fade",1000);
+    }, 2000);
+    setTimeout(function (){
+	    $("#form2").show("fade",2000);
+    }, 4000);
+});
+$("#formno").click(function() {
+	$("#formanswer").html("答错啦 说出你内心的想法吧~");	
+	$("#formanswer").show("fade",3000);
+});
+$(window).load(function(){
+	$(".finaltext").hide();
+	$(".final").hide();
+	$("#label8").hide();
+	$("#formanswer").hide();
+	$("#addlabel").hide();
+	$("#form").hide();
+	$("#form2").hide();
+    $("#label").hide();
+    $("#label2").hide();
+    $("#clock").hide();
+    $("#label3").hide();
+    $("#label4").hide();
+    $("#label5").hide();
+    $("#label6").hide();
+    $("#label7").hide();
+    $("#label").show("fade",5000);
+    setTimeout(function (){
+	    $("#label2").show("fade",5000);
+    }, 1000);
+    setTimeout(function (){
+	    $("#clock").show("fade",5000);
+    }, 2500);
+    setTimeout(function (){
+	    $("#label3").show("fade",5000);
+    }, 5500);
+    setTimeout(function (){
+	    $("#label4").show("fade",5000);
+	    setTimeout(function (){
+		    $("#addlabel").show("fade",2000);
+	    },2000);
+    }, 7500);
+    setTimeout(function (){
+	    $("#label").hide("fade",2000);
+	    $("#label2").hide("fade",2000);
+	    $("#clock").hide("fade",2000);
+	    $("#label3").hide("fade",2000);
+	    $("#label4").hide("fade",2000);
+	    $("#addlabel").hide("fade",2000);
+    }, 15000);
+    setTimeout(function (){
+	    $("#label5").show("fade",5000);
+    }, 18000);
+    setTimeout(function (){
+	    $("#label5").hide("fade",1000);
+    }, 20000);
+    setTimeout(function (){
+	    $("#label6").show("fade",2000);
+    }, 24000);
+    setTimeout(function (){
+	    $("#label6").hide("fade",1000);
+    }, 28000);
+    setTimeout(function (){
+	    $("#label7").show("fade",2000);
+    }, 30000);
+    setTimeout(function (){
+	    $("#label7").hide("fade",1000);
+    }, 35000);
+    setTimeout(function (){
+	    $("#form").show("fade",2000);
+    }, 36000);
+});
+window.setInterval(function(){
+	// Set the unit values in milliseconds.
+	var msecPerMinute = 1000 * 60;
+	var msecPerHour = msecPerMinute * 60;
+	var msecPerDay = msecPerHour * 24;
+	// Set a date and get the milliseconds
+	var date = new Date();
+	var dateMsec = date.getTime();
+	// Set the date to January 1, at midnight, of the specified year.
+	date = new Date('9/21/2015');
+
+	// Get the difference in milliseconds.
+	var interval = dateMsec - date.getTime();
+	// Calculate how many days the interval contains. Subtract that
+	// many days from the interval to determine the remainder.
+	var days = Math.floor(interval / msecPerDay );
+	interval = interval - (days * msecPerDay );
+
+	// Calculate the hours, minutes, and seconds.
+	var hours = Math.floor(interval / msecPerHour );
+	interval = interval - (hours * msecPerHour );
+
+	var minutes = Math.floor(interval / msecPerMinute );
+	interval = interval - (minutes * msecPerMinute );
+	var seconds = Math.floor(interval / 1000 );
+	$("#clock").html("第"+days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒");
+}, 1000);
+</script> 
+</body> 
+</html>
+
+
